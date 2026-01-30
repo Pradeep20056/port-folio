@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/ui/Navbar";
+import PageTransition from "@/components/ui/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-blue-500/30`}
       >
-        {children}
+        <Navbar />
+        <main className="relative z-10">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
       </body>
     </html>
   );

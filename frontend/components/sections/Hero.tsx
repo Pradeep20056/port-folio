@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 export default function Hero() {
     return (
@@ -12,60 +12,52 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
                 className="z-10 flex flex-col items-center text-center"
             >
-                <h1 className="text-6xl font-bold tracking-tight sm:text-8xl">
-                    <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h1 className="text-6xl font-extrabold tracking-tighter sm:text-8xl">
+                    <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
                         Pradeep K
                     </span>
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg text-zinc-400 sm:text-xl">
-                    Aspiring Fullstack Developer | Pursuit of Information Technology
+                <p className="mt-8 max-w-2xl text-lg text-zinc-400 sm:text-2xl font-light">
+                    Transforming complex data into <span className="text-white font-medium">elegant interactive experiences.</span>
                 </p>
 
-                <div className="mt-10 flex gap-6">
+                <div className="mt-12 flex flex-wrap justify-center gap-4">
                     <motion.a
-                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href="/projects"
+                        className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-colors"
+                    >
+                        View Projects
+                    </motion.a>
+                    <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href="/about"
+                        className="px-8 py-4 bg-white/5 text-white font-semibold rounded-full border border-white/10 hover:bg-white/10 transition-colors"
+                    >
+                        About Me
+                    </motion.a>
+                </div>
+
+                <div className="mt-16 flex gap-6">
+                    <motion.a
+                        whileHover={{ scale: 1.2, rotate: 5 }}
                         href="https://github.com/Pradeep20056"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full bg-zinc-900/50 p-3 text-zinc-400 transition-colors hover:text-white"
+                        className="text-zinc-500 hover:text-white transition-colors"
                     >
                         <Github size={24} />
                     </motion.a>
                     <motion.a
-                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileHover={{ scale: 1.2, rotate: -5 }}
                         href="https://www.linkedin.com/in/pradeep-k-017751314/"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full bg-zinc-900/50 p-3 text-zinc-400 transition-colors hover:text-white"
+                        className="text-zinc-500 hover:text-white transition-colors"
                     >
                         <Linkedin size={24} />
                     </motion.a>
-                    <motion.a
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        href="https://leetcode.com/u/Pradeepk_07/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full bg-zinc-900/50 p-3 text-zinc-400 transition-colors hover:text-white"
-                    >
-                        <Code2 size={24} />
-                    </motion.a>
-                    <motion.a
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        href="mailto:pradeepkannan012@gmail.com"
-                        className="rounded-full bg-zinc-900/50 p-3 text-zinc-400 transition-colors hover:text-white"
-                    >
-                        <Mail size={24} />
-                    </motion.a>
                 </div>
-
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="mt-20 flex flex-col items-center gap-2"
-                >
-                    <p className="text-sm font-medium uppercase tracking-widest text-zinc-500">Scroll Down</p>
-                    <div className="h-10 w-[1px] bg-gradient-to-b from-zinc-500 to-transparent" />
-                </motion.div>
             </motion.div>
         </section>
     );
